@@ -3,21 +3,74 @@
     require("../src/conexionDB.class.php");
 
 
-        $usuario = $_POST['username'];
-        $clave = $_POST['pass'];
-
-        echo "Usuario: " . $usuario . "<br> Clave: " . $clave;
-
-
-
-
     /**
-    * Establecemos conexión con DBase
+    * Establecemos conexión con DBase y comprobamos datos de usuario
     **/
     $dbconecta = new conexionDB();
 
+    $sql = "SELECT * FROM usuarios WHERE user = :c_user AND password = :c_pass AND suspendido = 0";
 
+    /**
+    * Obtenemos datos introducidos por usuario
+    **/
+    $user = htmlentities(addslashes($_POST['username']));
+    $psw = htmlentities(addslashes($_POST['pass']));
 
+    /**
+    * Preparamos consulta y obtenemos datos
+    **/
+    $stmt = $dbconecta->prepare($sql);
+    $stmt->bindValue(':c_user',$user);
+    $stmt->bindValue(':c_pass',$psw);
+    $stmt->execute();
 
+    $numreg = $stmt->rowCount();
+
+    if ($numreg != 0) {
+
+        /**
+        * Iniciamos control de la sesión de usuario
+        **/
+        session_start();
+        $_SESSION['usuario'] = $_POST['username'];
+
+        /**
+        * Obtenemos nivel de permisos del usuario logado
+        **/
+        $leveluser = $stmt->fetch(PDO::FETCH_ASSOC);
+        $rol = $leveluser['permisos'];
+
+        if ($rol == "administrador") {
+
+            /**
+            * Creamos cookie encargada de controlar perfil de acceso administrador
+            **/
+            setcookie("perfil_user", $rol, time()+86400);
+
+            header("location:intralerning/index.php");
+
+        } else if ($rol == "gestor") {
+
+            /**
+            * Creamos cookie encargada de controlar perfil de acceso gestor
+            **/
+            setcookie("perfil_user", $rol, time()+86400);
+
+            header("location:intralerning/clientes/1/index.php");
+
+        }
+
+    } else {
+
+        header("location:index.php");
+        exit;
+
+    }
+
+    /**
+    * Liberamos memoria y cerramos conexión
+    **/
+    $stmt->closeCursor();
+    $dbconecta = null;
 
 ?>
