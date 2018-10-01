@@ -46,18 +46,18 @@
             /**
             * Creamos cookie encargada de controlar perfil de acceso administrador
             **/
-            setcookie("perfil_user", $rol, time()+86400);
+            setcookie("perfil_user", $rol, time()+86400, "/gestecnica");
 
-            header("location:../intralerning/panel_admin.php");
+            header("location:/gestecnica/intralearning/panel_admin.php");
 
         } else if ($rol == "gestor") {
 
             /**
             * Creamos cookie encargada de controlar perfil de acceso gestor
             **/
-            setcookie("perfil_user", $rol, time()+86400);
+            setcookie("perfil_user", $rol, time()+86400, "/gestecnica");
 
-            header("location:http://ideoformacion.com");
+            header("location:/gestecnica/intralearning/clientes/panel_gestion.php");
 
         }
 
