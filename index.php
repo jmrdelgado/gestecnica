@@ -8,8 +8,8 @@
     <meta name="author" content="Jose Manuel Rufo Delgado - IDEO Formación">
 	<meta name="generator" content="Sublimet Text 3">
 	<meta name="keywords" content="acciones, cursos, matriculas, formación, gestión, clientes" />
-	<meta name="description" content="Herramienta de Gestión Técnica de Formación" />
-	<meta name="title" content="Herramienta de Gestión Técnica de Formación"/>
+	<meta name="description" content="Gestión Técnica de la Formación" />
+	<meta name="title" content="Gestión Técnica de la Formación"/>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -78,7 +78,7 @@
 					</div>
 
 					<div class="container-login100-form-btn">
-						<input type="submit" name="ingresar" class="login100-form-btn" value="Ingresar" style="cursor: pointer;">
+						<input type="submit" name="ingresar" class="login100-form-btn" value="Ingresar" title="Comprobar Usuario" style="cursor: pointer;">
 					</div>
 				</form>
 			</div>
