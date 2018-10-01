@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
 *
@@ -13,7 +13,7 @@ class conexionDB
 {
 
 	protected $dbconecta;
-	
+
 	function __construct()
 	{
 		if (isset($_SERVER['SERVER_NAME'])) {
@@ -22,14 +22,12 @@ class conexionDB
 
 
 			if ($dbhost == 'localhost' || $dbhost == '127.0.0.1') {
-				
+
 				try {
 
 					$this->dbconecta = new PDO("mysql:host=" . DBHOST_LC . ";dbname=" . DBNAME_LC, DBUSER_LC , DBPASS_LC);
 
 					$this->dbconecta->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-					echo "Conexión establecida...";
 
 				} catch (PDOException $e) {
 
@@ -40,6 +38,16 @@ class conexionDB
 				}
 			}
 		}
+	}
+
+	public function getconectPDO() {
+
+		if ($this->dbconecta instanceof PDO) {
+
+			return $this->dbconecta;
+
+		}
+
 	}
 }
 

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
 * Configuración DBase Local
@@ -17,10 +17,5 @@
 	define("DBNAME_RM", "");
 	define("DBUSER_RM", "");
 	define("DBPASS_RM", "");
-
-/**
-* Juego de caracteres a establecer
-**/
-	define("DBCHARSET", "utf8");
 
 ?>
