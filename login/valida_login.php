@@ -7,6 +7,7 @@
     * Establecemos conexión con DBase y comprobamos datos de usuario
     **/
     $dbconecta = new conexionDB();
+    $dbconecta = $dbconecta->getconectPDO();
 
     $sql = "SELECT * FROM usuarios WHERE user = :c_user AND password = :c_pass AND suspendido = 0";
 
@@ -20,8 +21,8 @@
     * Preparamos consulta y obtenemos datos
     **/
     $stmt = $dbconecta->prepare($sql);
-    $stmt->bindValue(':c_user',$user);
-    $stmt->bindValue(':c_pass',$psw);
+    $stmt->bindValue(':c_user', $user);
+    $stmt->bindValue(':c_pass', $psw);
     $stmt->execute();
 
     $numreg = $stmt->rowCount();
@@ -47,7 +48,7 @@
             **/
             setcookie("perfil_user", $rol, time()+86400);
 
-            header("location:intralerning/index.php");
+            header("location:../intralerning/panel_admin.php");
 
         } else if ($rol == "gestor") {
 
@@ -56,13 +57,13 @@
             **/
             setcookie("perfil_user", $rol, time()+86400);
 
-            header("location:intralerning/clientes/1/index.php");
+            header("location:http://ideoformacion.com");
 
         }
 
     } else {
 
-        header("location:index.php");
+        header("location:../index.php");
         exit;
 
     }
