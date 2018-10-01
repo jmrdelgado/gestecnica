@@ -1,10 +1,9 @@
 <?php
 
 /**
-*
 * Clase encargada de establecer conexión con DBASE
 * Author: Jose Manuel Rufo
-*
+* Fecha: 01/10/2018
 **/
 
 require("config.php");

@@ -2,6 +2,8 @@
 
 /**
 * Configuración DBase Local
+* Author: Jose Manuel Rufo
+* Fecha: 01/10/2018
 **/
 
 	define("DBHOST_LC", "localhost");
