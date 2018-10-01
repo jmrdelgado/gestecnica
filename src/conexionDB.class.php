@@ -29,6 +29,8 @@ class conexionDB
 
 					$this->dbconecta->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+					$this->dbconecta->exec("SET CHARACTER SET utf8");
+
 				} catch (PDOException $e) {
 
 					echo "Error al establecer conexión con DBase.<br>" . $_SERVER['SERVER_NAME'];
