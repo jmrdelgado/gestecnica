@@ -39,6 +39,16 @@ class conexionDB
 			}
 		}
 	}
+
+	public function getconectPDO() {
+
+		if ($this->dbconecta instanceof PDO) {
+
+			return $this->dbconecta;
+
+		}
+
+	}
 }
 
 ?>
