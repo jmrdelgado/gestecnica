@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="UTF-8">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="UTF-8">
 <head>
 	<title>Gestión Técnica de Formación</title>
 
