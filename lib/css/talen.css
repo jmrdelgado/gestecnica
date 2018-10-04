@@ -1,0 +1,50 @@
+/*
+* menu_hor.inc.php
+*/
+
+#redes {
+    height: 20px;
+    background-color: #464954;
+}
+
+#logo {
+    float: left;
+    padding: 8px 79px 7px 70px;
+    width: 520px;
+    height: 85px;
+}
+
+.contenedor {
+    height: 90px;
+    background-color: #FFFFFF;
+}
+
+.bdorado {
+    height: 10px;
+    background-color: #baa544;
+}
+
+.layout_central {
+	min-height: 400px;
+	background-color: #FFFFFF;
+}
+
+#pie_pagina {
+	background-color: #464954;
+}
+
+.content_pie {
+    padding: 10px 20px;
+    width: 100%;
+    font-family: 'Gafata', Arial, sans-serif;
+    font-size: 14px;
+    color: #FFFFFF;
+    margin: 0 auto;
+    height: 80px;
+}
+
+.info_pie {
+	width: 59%;
+	margin: 0 auto;
+	padding: 15px 0px 0px 0px;
+}
