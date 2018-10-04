@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang="UTF-8">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
 <head>
 	<title>Gestión Técnica de Formación</title>
 
     <!-- metas -->
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <meta name="author" content="Jose Manuel Rufo Delgado - IDEO Formación">
+    <meta name="author" content="Jose Manuel Rufo Delgado - IDEO FormaciÃ³n">
 	<meta name="generator" content="Sublimet Text 3">
 	<meta name="keywords" content="acciones, cursos, matriculas, formación, gestión, clientes" />
-	<meta name="description" content="Gestión Técnica de la Formación" />
-	<meta name="title" content="Gestión Técnica de la Formación"/>
+	<meta name="description" content="Gestión Técnica de Formación" />
+	<meta name="title" content="Gestión Técnica de Formación"/>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!--== Librerías CSS ==-->
+<!--== LibrerÃ­as CSS ==-->
 	<link rel="icon" type="image/png" href="lib/images/icons/favicon.ico"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="lib/vendor/bootstrap/css/bootstrap.min.css">
@@ -72,7 +72,7 @@
 
 						<div>
 							<a href="#" class="txt1">
-								¿Olvidó su clave?
+								Â¿OlvidÃ³ su clave?
 							</a>
 						</div>
 					-->
@@ -86,7 +86,7 @@
 		</div>
 	</div>
 
-<!--== Librerías Bootstrap ==-->
+<!--== LibrerÃ­as Bootstrap ==-->
 	<script src="lib/vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
 	<script src="lib/vendor/animsition/js/animsition.min.js"></script>
