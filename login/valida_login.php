@@ -41,25 +41,12 @@
         $leveluser = $stmt->fetch(PDO::FETCH_ASSOC);
         $rol = $leveluser['permisos'];
 
-        if ($rol == "administrador") {
+        /**
+        * Creamos cookie encargada de controlar perfil de acceso administrador
+        **/
+        setcookie("perfil_user", $rol, time()+86400, "/gestecnica");
+        header("location:acceso_usuarios.php");
 
-            /**
-            * Creamos cookie encargada de controlar perfil de acceso administrador
-            **/
-            setcookie("perfil_user", $rol, time()+86400, "/gestecnica");
-
-            header("location:/gestecnica/intralearning/panel_admin.php");
-
-        } else if ($rol == "gestor") {
-
-            /**
-            * Creamos cookie encargada de controlar perfil de acceso gestor
-            **/
-            setcookie("perfil_user", $rol, time()+86400, "/gestecnica");
-
-            header("location:/gestecnica/intralearning/clientes/panel_gestion.php");
-
-        }
 
     } else {
 
