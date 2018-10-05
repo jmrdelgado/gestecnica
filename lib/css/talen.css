@@ -10,6 +10,12 @@
     height: 85px;
 }
 
+#logo_cliente {
+    padding-top: 8px;
+    float: right;
+    padding-right: 70px;
+}
+
 .contenedor {
     height: 90px;
     background-color: #FFFFFF;
