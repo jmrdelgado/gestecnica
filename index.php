@@ -79,7 +79,7 @@
 					</div>
 
 					<div class="container-login100-form-btn">
-						<input type="submit" name="ingresar" class="login100-form-btn" value="Ingresar" title="Comprobar Usuario" style="cursor: pointer;">
+						<input type="submit" name="ingresar" class="login100-form-btn" value="Identificar Usuario" title="Identificar Usuario" style="cursor: pointer;">
 					</div>
 				</form>
 			</div>
