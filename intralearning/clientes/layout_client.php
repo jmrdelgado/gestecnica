@@ -7,9 +7,9 @@
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <meta name="author" content="Jose Manuel Rufo Delgado - IDEO Formación">
 	<meta name="generator" content="Sublimet Text 3">
-	<meta name="keywords" content="acciones, cursos, matriculas, formaci�n, gesti�n, clientes" />
-	<meta name="description" content="Gesti�n T�cnica de Formaci�n" />
-	<meta name="title" content="Gesti�n T�cnica de Formaci�n"/>
+	<meta name="keywords" content="acciones, cursos, matriculas, formación, gestión, clientes" />
+	<meta name="description" content="Gestión Técnica de Formación" />
+	<meta name="title" content="Gestión Técnica de Formación"/>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -41,7 +41,7 @@
 </head>
 <body>
 	<?php
-	   if (!isset($_SESSION['rol_user']) == "administrador") {
+	   if (!$_SESSION['rol_user'] == "cliente") {
 	       header("location:../index.php");
 	   }
 	 ?>
