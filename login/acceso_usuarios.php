@@ -45,7 +45,7 @@
 	**/
 	session_start();
 	
-	if (!isset($_SESSION['usuario'])) {
+	if (!isset($_SESSION['rol_user'])) {
 
 		header("location:../index.php");
 

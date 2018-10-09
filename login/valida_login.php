@@ -1,12 +1,12 @@
 <?php
 
-    require("../src/conexionDB.class.php");
+    require("../src/ConexionDB.class.php");
 
 
     /**
     * Establecemos conexión con DBase y comprobamos datos de usuario
     **/
-    $dbconecta = new conexionDB();
+    $dbconecta = new ConexionDB();
     $dbconecta = $dbconecta->getconectPDO();
 
     $sql = "SELECT * FROM usuarios WHERE user = :c_user AND password = :c_pass AND suspendido = 0";
@@ -27,24 +27,20 @@
 
     $numreg = $stmt->rowCount();
 
-    if ($numreg != 0) {
+    if ($numreg != 0) {      
 
         /**
-        * Iniciamos control de la sesión de usuario
+        * Obtenemos datos del usuario logado
         **/
+        $infouser = $stmt->fetch(PDO::FETCH_ASSOC);
+        $rol = $infouser['permisos'];
+        
+        /**
+         * Iniciamos control de la sesión de usuario
+         **/
         session_start();
-        $_SESSION['usuario'] = $_POST['username'];
+        $_SESSION['rol_user'] = $rol;
 
-        /**
-        * Obtenemos nivel de permisos del usuario logado
-        **/
-        $leveluser = $stmt->fetch(PDO::FETCH_ASSOC);
-        $rol = $leveluser['permisos'];
-
-        /**
-        * Creamos cookie encargada de controlar perfil de acceso administrador
-        **/
-        setcookie("perfil_user", $rol, time()+86400, "/gestecnica");
         header("location:acceso_usuarios.php");
 
 

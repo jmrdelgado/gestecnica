@@ -5,6 +5,8 @@
  **/
     session_start();
     
+    session_unset($_SESSION['rol_user']);
+    
     session_destroy();
     
     header("location:../index.php");
