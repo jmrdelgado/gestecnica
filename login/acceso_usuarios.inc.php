@@ -11,7 +11,7 @@
 	    
 	    echo "<img src='../lib/images/icons/user_logeado.png' alt='Icono Usuarios' style='width:110px; padding-bottom:15px;'><br>";
 	    echo "<span class='label_tit'>Validación de Usuario correcta</span><br>";
-	    echo "<br>Usuario conectado al sistema: <strong>" . $_COOKIE['name_user'] . "</strong><br><br>";
+	    echo "<br>Usuario conectado al sistema: <strong>" . $_COOKIE['name_user'] . "</strong>" . "<br><br>";
 	    
 	    //Botón cerrar sesión
 	    echo "<a href='close_sesion.php'><button type='submit' name='cerrar_sesion' class='btn btn-success btn-sm' title='Cerrar sesión' style='cursor: pointer;'>Cerrar sesión</button></a>";
