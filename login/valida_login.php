@@ -2,7 +2,6 @@
 
     require("../src/ConexionDB.class.php");
 
-
     /**
     * Establecemos conexión con DBase y comprobamos datos de usuario
     **/
@@ -40,6 +39,11 @@
          **/
         session_start();
         $_SESSION['rol_user'] = $rol;
+        
+        /**
+         * Creamos cookie con nombre usuario
+         */
+        setcookie("name_user", $user, time()+86400, "/gestecnica");
 
         header("location:acceso_usuarios.php");
 
@@ -47,7 +51,7 @@
     } else {
 
         header("location:../index.php");
-        exit;
+        exit();
 
     }
 
