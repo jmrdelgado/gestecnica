@@ -16,6 +16,12 @@
     padding-right: 70px;
 }
 
+#cierre_sesion {
+	padding-top: 23px;
+    float: right;
+    padding-right: 70px;
+}
+
 .contenedor {
     height: 90px;
     background-color: #FFFFFF;
@@ -67,4 +73,12 @@
     font-size: 18px;
     color: #464954;
     line-height: 1.2;
+}
+
+.subcabecera {
+	height: 100px;
+	background-color: #464954;
+	text-align: right;
+	color: #FFFFFF;
+	padding: 15px 50px 0px 0px;
 }
