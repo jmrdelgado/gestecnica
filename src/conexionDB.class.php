@@ -8,7 +8,7 @@
 
 require("config.php");
 
-class conexionDB
+class ConexionDB
 {
 
 	protected $dbconecta;
