@@ -58,16 +58,16 @@
 
 		        <!-- Acceso a Intralearning -->
 				<div class="layout_central">
-
-					<!--  -->
-
+					<?php
+					   require ("/1/index.php");
+                    ?>
 				</div>
 
 				<!-- Pie Página -->
 				<?php 
 					require_once("../inc/footer.inc.php");
 				?>
-
+			
 			</div>
 		</div>
 	</div>
