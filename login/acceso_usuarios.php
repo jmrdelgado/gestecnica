@@ -84,7 +84,7 @@
 		        </div>
 
 		        <!-- Acceso a Intralearning -->
-				<div class="layout_central">
+				<div class="layout_central_usuarios">
 					<div class="texto_seccion_logeado">
     					<?php 
     					   require("acceso_usuarios.inc.php");
