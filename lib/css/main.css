@@ -37,8 +37,9 @@
 }
 
 body, html {
-	height: 100%;
 	font-family: Poppins-Regular, sans-serif;
+	height: 100%; /* Rufo */
+	background-color: #ebeeef; /* Rufo */
 }
 
 /*---------------------------------------------*/
@@ -50,8 +51,8 @@ a {
 	margin: 0px;
 	transition: all 0.4s;
 	-webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
+ 	-o-transition: all 0.4s;
+  	-moz-transition: all 0.4s;
 }
 
 a:focus {
@@ -60,7 +61,7 @@ a:focus {
 
 a:hover {
 	text-decoration: none;
-  color: #57b846;
+  	color: #57b846;
 }
 
 /*---------------------------------------------*/
@@ -164,11 +165,12 @@ iframe {
 .limiter {
   width: 100%;
   margin: 0 auto;
+  height: 100%; /* Rufo */
 }
 
 .container-login100 {
-  width: 100%;  
-  min-height: 100vh;
+  width: 100%;
+  /*min-height: 100vh;/* - Desactivada Rufo*/
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -179,6 +181,7 @@ iframe {
   align-items: center;
   padding: 15px;
   background: #ebeeef;
+  height: 100%; /* Rufo */
 }
 
 

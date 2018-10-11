@@ -10,10 +10,11 @@
     height: 85px;
 }
 
-#logo_cliente {
-    padding-top: 8px;
-    float: right;
-    padding-right: 70px;
+.logo_cliente {
+    text-align: center;
+	padding: 15px 0px 15px 0px;
+	border-bottom: solid 10px #baa544;
+	background-color: #FFF;
 }
 
 #cierre_sesion {
@@ -33,12 +34,27 @@
 }
 
 .layout_central {
-	min-height: 400px;
-	background-color: #FFFFFF;
+	min-height: 608px;
+	background-image: url("../../lib/images/fondo_mn.png");
+	background-color: #FFF;
 }
 
+.layout_central_usuarios {
+	background-color: #FFF;
+}
+
+.container {
+    position: absolute;
+    top: 0px;
+}
+/*
+.layout_central_usuarios {
+    min-height: 418px;
+}
+*/
 #pie_pagina {
 	background-color: #464954;
+	height: 95px;
 }
 
 .content_pie {
@@ -49,7 +65,6 @@
     font-weight: normal;
     color: #FFFFFF;
     margin: 0 auto;
-    height: 80px;
 }
 
 .info_pie {
@@ -81,4 +96,35 @@
 	text-align: right;
 	color: #FFFFFF;
 	padding: 15px 50px 0px 0px;
+}
+
+/* Menú Opciones Cliente */
+
+#menu_opc {
+	width: 220px;
+	float: left;
+	height: auto;
+	font-size: 14px;
+}
+
+#menu_opc li {
+    background-color: #cec28d;
+    border-bottom: solid 1px #E9E5D4;
+    padding: 5px 5px 5px 15px;
+}
+
+#menu_opc li:hover{
+    background-color: #6d707a;
+    color: #FFF;
+    border-left: solid 5px #ff5b00;
+    border-bottom: solid 1px #E9E5D4;
+    cursor: pointer;
+}
+
+#menu_opc a{
+	color: #3c3a3a;
+}
+
+#menu_opc a:hover {
+	color: #ff5b00;
 }
