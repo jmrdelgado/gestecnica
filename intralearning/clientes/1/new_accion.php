@@ -5,10 +5,10 @@
 
 if (!$_SESSION['rol_user'] == "cliente") {
     header("location:../index.php");
-} else {
-    
-    echo '<div>ALTA DE ACCIONES</div>';
-    
 }
 
 ?>
+
+<div class="listado">
+	<div>ALTA DE ACCIONES</div>
+</div>
