@@ -59,7 +59,20 @@
 		        <!-- Acceso a Intralearning -->
 				<div class="layout_central">
 					<?php
-					   require ("/1/index.php");
+					   require ("../src/ConsultaCliente.class.php");
+					   
+					   $idCliente = new ConsultaCliente();
+					   $id = $idCliente->getIdCliente($_COOKIE['name_user']);
+					   
+					   switch ($id) {
+					       case 1:
+					           require '/1/index.php';
+					           break;
+					       case 2:
+					           require '/2/index.php';
+					           break;
+					   }
+					   
                     ?>
 				</div>
 
