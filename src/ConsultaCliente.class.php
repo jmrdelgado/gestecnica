@@ -6,6 +6,8 @@
  * Fecha 11/10/2018
  */
 
+require 'ConexionDB.class.php';
+
 class ConsultaCliente extends ConexionDB {
     
     function __construct() {
