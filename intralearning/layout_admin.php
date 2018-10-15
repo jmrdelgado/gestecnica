@@ -41,6 +41,8 @@
 </head>
 <body>
 	<?php
+	   session_start();
+	   
 	   if (!isset($_SESSION['rol_user']) == "administrador") {
 	       header("location:../index.php");
 	   }
