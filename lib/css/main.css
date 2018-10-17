@@ -236,7 +236,29 @@ iframe {
   background-color: rgba(54,84,99,0.7);
 }
 
+/*==================================================================
+[ Contenedor Form Acciones ]*/
+.row {
+	padding: 50px;
+}
 
+.form-acciones {
+	width: 100%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 30px 50px 30px 50px;
+	background-color: #e9e6da;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+.form-control, .custom-select, .mb-3 label {
+	font-size: 14px;
+}
 /*==================================================================
 [ Form ]*/
 

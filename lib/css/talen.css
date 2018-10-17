@@ -135,3 +135,16 @@
     width: 1110px;
     padding: 50px 50px 50px 270px;
 }
+
+.listado-cab-title {
+	width: 100%;
+	font-size: 18px;
+	flex-wrap: wrap;
+	flex-direction: column;
+	padding: 20px 15px 20px 15px;
+	text-align: center;
+	background-color: #575757;
+	color: #FFF;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
