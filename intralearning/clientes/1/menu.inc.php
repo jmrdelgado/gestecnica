@@ -12,6 +12,7 @@
 	</div>
     <ul>
        	<a href="?p=new_accion"><li>Comunicar Acción</li></a>
-        <a href="?p=estado_acciones"><li>Consultar Estado</li></a>
+       	<a href="?p=new_grupo"><li>Comunicar Grupo</li></a>
+        <a href="?p=estado_grupos"><li>Consultar Estado Grupos</li></a>
     </ul>
 </div>

@@ -4,7 +4,7 @@
         header("location:../../index.php");
     } else {
         
-        $pagina = isset($_GET['p']) ? strtolower($_GET['p']) : 'estado_acciones';
+        $pagina = isset($_GET['p']) ? strtolower($_GET['p']) : 'estado_grupos';
         
         require ("menu.inc.php");
         
