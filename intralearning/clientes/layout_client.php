@@ -4,7 +4,7 @@
 	<title>Gestión Técnica de Formación</title>
 
     <!-- metas -->
-	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="Jose Manuel Rufo Delgado - IDEO Formación">
 	<meta name="generator" content="Sublimet Text 3">
 	<meta name="keywords" content="acciones, cursos, matriculas, formación, gestión, clientes" />

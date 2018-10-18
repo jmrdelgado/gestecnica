@@ -48,7 +48,7 @@
 					</span>
 				</div>
 
-				<form class="login100-form validate-form" method="post" action="login/valida_login.php" name="login">
+				<form class="login100-form validate-form" method="post" action="logic/valida_login.php" name="login">
 					<div class="wrap-input100 validate-input m-b-26" data-validate="Campo requerido">
 						<span class="label-input100">Usuario</span>
 						<input class="input100" type="text" name="username" placeholder="Indique Usuario">

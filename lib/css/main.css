@@ -244,10 +244,10 @@ iframe {
 
 .form-acciones {
 	width: 100%;
-	display: -webkit-box;
-	display: -webkit-flex;
+	/*display: -webkit-box;
+	display: -webkit-flex;*/
 	display: -moz-box;
-	display: -ms-flexbox;
+	/*display: -ms-flexbox;*/
 	flex-wrap: wrap;
 	justify-content: space-between;
 	padding: 30px 50px 30px 50px;
@@ -258,6 +258,10 @@ iframe {
 
 .form-control, .custom-select, .mb-3 label {
 	font-size: 14px;
+}
+
+.form-control {
+	padding: 5px 20px 5px 20px;
 }
 /*==================================================================
 [ Form ]*/

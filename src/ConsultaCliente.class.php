@@ -16,6 +16,7 @@ class ConsultaCliente extends ConexionDB {
         
     }
     
+    /** Método para obtener el id_Cliente que se encuentra conectado **/
     function getIdCliente($user) {
         
         $sql_id = "SELECT id_cliente FROM usuarios WHERE user = :c_user AND suspendido = 0";
