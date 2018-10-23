@@ -238,8 +238,26 @@ iframe {
 
 /*==================================================================
 [ Contenedor Form Acciones ]*/
-.row {
+.content_form {
 	padding: 50px;
+	display: flex;
+	flex_wrap: wrap;
+	font-size: 14px;
+}
+
+.row {
+	margin-right: 0px;
+	margin-left: 0px;
+	width: 100%;
+}
+
+.col, .col-sm-3 {
+	padding-left: 0px;
+	padding-bottom: 10px;
+}
+
+.col-sm-3, .col-sm-2 {
+	max-width: 100%;
 }
 
 .form-acciones {
@@ -261,7 +279,7 @@ iframe {
 }
 
 .form-control {
-	padding: 5px 20px 5px 20px;
+	padding: 5px 10px 5px 10px;
 }
 /*==================================================================
 [ Form ]*/
