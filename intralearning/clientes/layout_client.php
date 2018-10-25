@@ -63,8 +63,8 @@
 					<?php
 					   require ("../../src/ConsultaCliente.class.php");
 					   
-					   $idCliente = new ConsultaCliente();
-					   $id = $idCliente->getIdCliente($_COOKIE['name_user']);
+					   $consultar = new ConsultaCliente();
+					   $id = $consultar->getIdCliente($_COOKIE['name_user']);
 					   
 					   switch ($id) {
 					       case 1:
