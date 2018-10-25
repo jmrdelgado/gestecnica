@@ -18,12 +18,19 @@ if (!$_SESSION['rol_user'] == "cliente") {
          	
              	if ($_GET['tp'] == "tt") {
              	    
+             	    echo "<span style='text-align: center; padding: 50px 0px 20px 0px; font-size: 16px;'>Nuevo tutor generado<br><br></span>";
              	    echo "<a href='../clientes/layout_client.php?p=new_tutor'><button class='btn btn-success w-50' type='button' style='cursor:pointer; margin:0 auto;'>Aceptar</button></a>";
              	    
              	} elseif ($_GET['tp'] == "ac") {
              	    
+             	    echo "<span style='text-align: center; padding: 50px 0px 20px 0px; font-size: 16px;'>Nueva acción generada<br><br></span>";
              	    echo "<a href='../clientes/layout_client.php?p=new_accion'><button class='btn btn-success w-50' type='button' style='cursor:pointer; margin:0 auto;'>Aceptar</button></a>";
              	
+             	} elseif ($_GET['tp'] == "gr") {
+             	    
+             	    echo "<span style='text-align: center; padding: 50px 0px 20px 0px; font-size: 16px;'>Nuevo grupo generado<br><br></span>";
+             	    echo "<a href='../clientes/layout_client.php?p=new_grupo'><button class='btn btn-success w-50' type='button' style='cursor:pointer; margin:0 auto;'>Aceptar</button></a>";
+             	    
              	}
          	
          	?>
