@@ -44,20 +44,21 @@
         
         if ($numreg != 0) {
             
-            header("location:../intralearning/clientes/layout_client.php?p=confirmed");
+            header("location:../intralearning/clientes/layout_client.php?p=confirmed&tp=ac");
             
         }
         
     } catch (PDOException $e) {
+                
+        $coderror = $e->getCode();
         
-        if ($e->getCode() == 23000) {
-            echo "Error en el proceso de alta.<br>";
-            echo "La acción <strong>" . $accion . "</strong> ya existe en el sistema.<br>";
-            echo "Indique otro número de acción<br><br>";
-            echo "<a href='../intralearning/clientes/layout_client.php?p=new_accion'>Aceptar</a>";
+        if ($coderror == 23000) {
+            
+            header("location:../intralearning/clientes/layout_client.php?p=page_error&error=$coderror&tp=ac");
+            
         } else {
-            echo "Error en el proceso de alta.<br>";
-            echo "Póngase en contacto con el administrador del sistema";
+                        
+            header("location:../intralearning/clientes/layout_client.php?p=page_error&error=$coderror&tp=ac");
         }
     }        
         
