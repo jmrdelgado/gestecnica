@@ -39,5 +39,49 @@ class ConsultaCliente extends ConexionDB {
         $this->dbconecta = null;
         
     }
+    
+    /** Método para consultar acciones por cliente **/
+    function getAcciones($idcliente) {
+        
+        $sql_acciones = "SELECT * FROM acciones WHERE id_cliente = :c_idcliente ORDER BY naccion";
+        
+        $stmt = $this->dbconecta->prepare("$sql_acciones");
+        $stmt->bindValue(":c_idcliente", $idcliente);
+        $stmt->execute();
+        
+        $numreg = $stmt->rowCount();
+        
+        if ($numreg != 0) {
+            
+            $result = $stmt->fetchAll(PDO::FETCH_COLUMN, 2);
+            return $result;
+        }
+        
+        $stmt->closeCursor();
+        $this->dbconecta = null;
+        
+    }
+    
+    /** Método para consultar tutores existentes **/
+    function getTutores() {
+        
+        $sql_tutores = "SELECT * FROM tutores ORDER BY nombre";
+        
+        $stmt = $this->dbconecta->prepare("$sql_tutores");
+        $stmt->execute();
+        
+        $numreg = $stmt->rowCount();
+        
+        if ($numreg != 0) {
+            
+            $result = $stmt->fetchAll(PDO::FETCH_COLUMN, 2);
+            return $result;
+        }
+        
+        $stmt->closeCursor();
+        $this->dbconecta = null;
+        
+    }
+    
 }
 ?>
