@@ -7,6 +7,8 @@ if (!$_SESSION['rol_user'] == "cliente") {
     header("location:../index.php");
 }
 
+
+require_once '../../src/ConsultaCliente.class.php';
 ?>
 
 <div class="content_form">
@@ -18,9 +20,18 @@ if (!$_SESSION['rol_user'] == "cliente") {
             <div class="mb-3">
             	<label for="naccion">Acción Formativa</label>
                     <select class="custom-select d-block w-50" id="naccion" required>
-                        <option value="">Seleccione una acción formativa</option>
-                        <option value="Presencial">Presencial</option>
-                        <option value="Teleformación">Teleformación</option>
+                    	<option value="">Seleccione una acción formativa</option>
+                        <?php 
+                            
+                            $consultar = new ConsultaCliente();
+                            $id_c = $consultar->getIdCliente($_COOKIE['name_user']);
+                            $rst_acciones = $consultar->getAcciones($id_c);
+                            
+                            foreach ($rst_acciones as $curso) {
+                                echo '<option value="' . $curso->denominacion . '">' . $curso . '</option>';
+                            }
+                                            
+                        ?>
                     </select>
             </div>
             
@@ -140,8 +151,16 @@ if (!$_SESSION['rol_user'] == "cliente") {
             	<label for="ntutor">Tutor / Docente</label>
                     <select class="custom-select d-block w-50" id="ntutor" required>
                         <option value="">Seleccione un Tutor/Docente</option>
-                        <option value="Presencial">Presencial</option>
-                        <option value="Teleformación">Teleformación</option>
+    						<?php 
+                                
+                                $consultatutor = new ConsultaCliente();
+                                $rst_tutores = $consultatutor->getTutores();
+                                
+                                foreach ($rst_tutores as $tutor) {
+                                    echo '<option value="' . $tutor . '">' . $tutor . '</option>';
+                                }
+                                                
+                            ?>
                     </select>
             </div>
             
