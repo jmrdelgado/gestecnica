@@ -28,7 +28,7 @@ require_once '../../src/ConsultaCliente.class.php';
                             $rst_acciones = $consultar->getAcciones($id_c);
                             
                             foreach ($rst_acciones as $curso) {
-                                echo '<option value="' . $curso . '">' . $curso . '</option>';
+                                echo '<option value="' . $curso->id . '-' . $curso->denominacion . '">' . $curso->denominacion . '</option>';
                             }
                                             
                         ?>
@@ -157,7 +157,7 @@ require_once '../../src/ConsultaCliente.class.php';
                                 $rst_tutores = $consultatutor->getTutores();
                                 
                                 foreach ($rst_tutores as $tutor) {
-                                    echo '<option value="' . $tutor . '">' . $tutor . '</option>';
+                                    echo '<option value="' . $tutor->id . '">' . $tutor->nombre . '</option>';
                                 }
                                                 
                             ?>
