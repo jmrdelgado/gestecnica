@@ -41,6 +41,21 @@ if (!$_SESSION['rol_user'] == "cliente") {
              	        echo "Póngase en contacto con el administrador del sistema.<br><br><br>";
              	        
              	        echo "<a href='../clientes/layout_client.php?p=new_tutor'><button class='btn btn-success w-50' type='button' style='cursor:pointer; margin:0 auto;'>Aceptar</button></a>";
+             	    } elseif ($_GET['tp'] == "gr") {
+             	        
+             	        if ($msg == 23000) {
+             	            echo "Error en el proceso de alta.<br>";
+             	            echo "Código de error: <strong>" . $msg . "</strong><br>";
+             	            echo "El grupo indicado ya existe en el sistema.<br><br><br>";
+             	            
+             	            echo "<a href='../clientes/layout_client.php?p=new_grupo'><button class='btn btn-success w-50' type='button' style='cursor:pointer; margin:0 auto;'>Aceptar</button></a>";
+             	        } else {
+             	            echo "Error en el proceso de alta.<br>";
+             	            echo "Póngase en contacto con el administrador del sistema.<br><br><br>";
+             	            
+             	            echo "<a href='../clientes/layout_client.php?p=new_grupo'><button class='btn btn-success w-50' type='button' style='cursor:pointer; margin:0 auto;'>Aceptar</button></a>";
+             	        }
+             	        
              	    }
              	    
              	    
