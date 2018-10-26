@@ -83,5 +83,27 @@ class ConsultaCliente extends ConexionDB {
         
     }
     
+    /**Métodos encargado de devolver array con grupos comunicados por cliente**/    
+    function getGruposCliente($idcliente) {
+        
+        $sql_grupos = "SELECT acciones.`naccion`, grupos.`ngrupo`, grupos.`denominacion`, grupos.`finicio`, grupos.`ffin`, grupos.`nalumnos`, grupos.`estado`
+                        FROM acciones INNER JOIN grupos ON acciones.`naccion` = grupos.`idaccion` AND acciones.`id_cliente` = '" . $idcliente . "' ORDER BY ngrupo ASC";
+        
+        $stmt = $this->dbconecta->prepare($sql_grupos);
+        $stmt->execute();
+        
+        $numreg = $stmt->rowCount();
+        
+        if ($numreg != 0) {
+            
+            $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+            return $result;
+        }
+        
+        $stmt->closeCursor();
+        $this->dbconecta = null;
+        
+    }
+    
 }
 ?>
