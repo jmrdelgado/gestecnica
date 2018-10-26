@@ -24,8 +24,11 @@
                    :c_hora_t_de,:c_hora_t_a,:c_dia_imp_lun,:c_dia_imp_mar,:c_dia_imp_mie,:c_dia_imp_jue,:c_dia_imp_vie,:c_dia_imp_sab,:c_dia_imp_dom,:c_idaccion,:c_idtutor)";
     
     
+    $posidaccion = strpos($_POST['denominacion'], "-");
+    
+    $idaccion = substr($_POST['denominacion'], 0, $posidaccion);
     $ngrupo = htmlentities(addslashes($_POST['ngrupo']));
-    $denominacion = addslashes($_POST['denominacion']);
+    $denominacion = substr($_POST['denominacion'], ++$posidaccion);
     $finicio = htmlentities(addslashes($_POST['finicio']));
     $ffin = addslashes($_POST['ffin']);
     $nalumnos = addslashes($_POST['nalumnos']);
@@ -45,6 +48,7 @@
     $dia_viernes = addslashes($_POST['viernes']);
     $dia_sabado = addslashes($_POST['sabado']);
     $dia_domingo = addslashes($_POST['domingo']);
+    $idtutor = addslashes($_POST['ntutor']);
     
     try {
         $stmt = $dbconn->prepare($sql_insert);
@@ -69,8 +73,8 @@
         $stmt->bindValue(':c_dia_imp_vie', $dia_viernes);
         $stmt->bindValue(':c_dia_imp_sab', $dia_sabado);
         $stmt->bindValue(':c_dia_imp_dom', $dia_domingo);
-        $stmt->bindValue(':c_idaccion', 2);
-        $stmt->bindValue(':c_idtutor', 1);
+        $stmt->bindValue(':c_idaccion', $idaccion);
+        $stmt->bindValue(':c_idtutor', $idtutor);
         $stmt->execute();   
     
         $numreg = $stmt->rowCount();
@@ -83,8 +87,13 @@
         
     } catch (PDOException $e) {
                 
-        $coderror = $e->getCode();          
-        header("location:../intralearning/clientes/layout_client.php?p=page_error&error=$coderror&tp=gr");
+        $coderror = $e->getCode();
+        
+        if ($coderror == 23000) {
+            header("location:../intralearning/clientes/layout_client.php?p=page_error&error=$coderror&tp=gr");
+        } else {
+            header("location:../intralearning/clientes/layout_client.php?p=page_error&error=$coderror&tp=gr");
+        }
         
     }        
         
