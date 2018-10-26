@@ -53,7 +53,7 @@ class ConsultaCliente extends ConexionDB {
         
         if ($numreg != 0) {
             
-            $result = $stmt->fetchAll(PDO::FETCH_COLUMN, 2);
+            $result = $stmt->fetchAll(PDO::FETCH_OBJ);
             return $result;
         }
         
@@ -74,7 +74,7 @@ class ConsultaCliente extends ConexionDB {
         
         if ($numreg != 0) {
             
-            $result = $stmt->fetchAll(PDO::FETCH_COLUMN, 2);
+            $result = $stmt->fetchAll(PDO::FETCH_OBJ);
             return $result;
         }
         
