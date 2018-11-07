@@ -65,8 +65,9 @@ class ConsultaCliente extends ConexionDB {
     /**Métodos encargado de devolver array con grupos comunicados por cliente**/    
     function getGruposCliente($idcliente) {
 
-        $sql_grupos = "SELECT `acciones`.`naccion`, `grupos`.`ngrupo`, `grupos`.`denominacion`, `grupos`.`finicio`, `grupos`.`ffin`, `grupos`.`nalumnos`, `grupos`.`idaccion`,
-                        `grupos`.`estado`, `acciones`.`id_cliente` FROM `acciones` LEFT JOIN `grupos` ON `acciones`.`id` = `grupos`.`idaccion` AND `acciones`.`id_cliente` = '1' ORDER BY `acciones`.`naccion` ASC ";
+        $sql_grupos = "SELECT `grupos`.`idaccion`, `grupos`.`ngrupo`, `grupos`.`denominacion`, `grupos`.`finicio`, `grupos`.`ffin`, `grupos`.`nalumnos`,
+                        `grupos`.`estado`, `acciones`.`naccion`, `acciones`.`id_cliente` FROM `grupos` LEFT JOIN `acciones` ON `grupos`.`idaccion` = `acciones`.`id`
+                        AND `acciones`.`id_cliente` = '1' ORDER BY `acciones`.`naccion` ASC ";
         
         $stmt = $this->dbconecta->prepare($sql_grupos);
         $stmt->execute();
