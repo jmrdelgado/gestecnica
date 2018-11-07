@@ -149,6 +149,30 @@
 	border-top-right-radius: 10px;
 }
 
+.datagrid table { border-collapse: collapse; text-align: left; width: 100%; }
+.datagrid {font: normal 12px/150% Arial, Helvetica, sans-serif; background: #fff; overflow: hidden; border: 1px solid #BAA544; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; margin-top: 10px;}
+.datagrid table td, .datagrid table th { padding: 3px 10px; }
+.datagrid table thead th {background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #BAA544), color-stop(1, #A6933D) );background:-moz-linear-gradient( center top, #BAA544 5%, #A6933D 100% );filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#BAA544', endColorstr='#A6933D');background-color:#BAA544; color:#303030; font-size: 15px; font-weight: bold; border-left: solid 1px #e0d5a8;; }
+.datagrid table thead th:first-child { border: none; }
+.datagrid table tbody td { color: #303030; border-left: 1px solid #B8AD7E;font-size: 12px;font-weight: normal; }
+.datagrid table tbody .alt td { background: #E0D5A8; color: #303030; }
+.datagrid table tbody td:first-child { border-left: none; }
+.datagrid table tbody tr:last-child td { border-bottom: none; }
+.datagrid table tfoot td div { border-top: 1px solid #BAA544;background: #DCD7C1;}
+.datagrid table tfoot td { padding: 0; font-size: 12px }
+.datagrid table tfoot td div{ padding: 2px; }
+.datagrid table tfoot td ul { margin: 0; padding:0; list-style: none; text-align: right; }
+.datagrid table tfoot  li { display: inline; }
+.datagrid table tfoot li a { text-decoration: none; display: inline-block;  padding: 2px 8px; margin: 1px;color: #FFFFFF;border: 1px solid #A6933D;-webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #A6933D), color-stop(1, #A6933D) );background:-moz-linear-gradient( center top, #A6933D 5%, #A6933D 100% );filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#A6933D', endColorstr='#A6933D');background-color:#A6933D; }
+.datagrid table tfoot ul.active, .datagrid table tfoot ul a:hover { text-decoration: none;border-color: #A6933D; color: #FFFFFF; background: none; background-color:#A6933D;}
+div.dhtmlx_window_active, div.dhx_modal_cover_dv { position: fixed !important; }
+
+thead {
+    background-color: #baa544;
+    font-weight: bold;
+    height: 30px;
+}
+
 /* Página confirmación alta */
 .confirmed {
 	width: 100%;
