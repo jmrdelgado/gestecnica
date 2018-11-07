@@ -1,3 +1,14 @@
+<?php
+	/**
+	* Comprobamos si el usuario esta logeado
+	**/
+	session_start();
+	
+	if (!isset($_SESSION['rol_user'])) {
+
+		header("location:http://okgroup.talention.es/index.php");
+	}
+?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
 <head>
@@ -7,9 +18,9 @@
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <meta name="author" content="Jose Manuel Rufo Delgado - IDEO Formación">
 	<meta name="generator" content="Sublimet Text 3">
-	<meta name="keywords" content="acciones, cursos, matriculas, formaci�n, gesti�n, clientes" />
-	<meta name="description" content="Gesti�n T�cnica de Formaci�n" />
-	<meta name="title" content="Gesti�n T�cnica de Formaci�n"/>
+	<meta name="keywords" content="acciones, cursos, matriculas, formación, gestión, clientes" />
+	<meta name="description" content="Gestión Técnica de Formación" />
+	<meta name="title" content="Gestión Técnica de Formación"/>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -37,22 +48,6 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="../lib/css/talen.css">
 <!--===============================================================================================-->
-
-<?php 
-
-	/**
-	* Comprobamos si el usuario esta logeado
-	**/
-	session_start();
-	
-	if (!isset($_SESSION['rol_user'])) {
-
-		header("location:../index.php");
-
-	}
-
-?>
-
 </head>
 <body>
 
@@ -87,7 +82,7 @@
 				<div class="layout_central_usuarios">
 					<div class="texto_seccion_logeado">
     					<?php 
-    					   require("acceso_usuarios.inc.php");
+    					   require ("acceso_usuarios.inc.php");
     					?>
 					</div>
 				</div>

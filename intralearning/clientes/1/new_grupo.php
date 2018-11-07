@@ -2,13 +2,15 @@
 /**
  * Formulario Alta de acciones formativas
  */
-
-if (!$_SESSION['rol_user'] == "cliente") {
-    header("location:../index.php");
-}
-
-
-require_once '../../src/ConsultaCliente.class.php';
+    $rol = $_SESSION['rol_user'];
+    
+    if ($rol != "cliente") {
+        header("location:../index.php");
+    }
+    
+    require_once '../../src/ConsultaCliente.class.php';
+    
+    $id_cliente = 1;
 ?>
 
 <div class="content_form">
@@ -18,18 +20,23 @@ require_once '../../src/ConsultaCliente.class.php';
     	<!-- <form class="form-acciones validate-form" method="post" action="" name="alta_acciones"> -->
     	<form class="form-acciones needs-validation was-validated" method="post" action="../../logic/alta_new_grupo.php" name="alta_grupos">	  
             <div class="mb-3">
+            	<?php 
+            	echo '<input type="hidden" id="idcliente" name="idcliente" value="' . $id_cliente .'">';
+            	?>
+            	
             	<label for="denominacion">Acción Formativa</label>
                     <select class="custom-select d-block w-50" id="denominacion" name="denominacion" required>
                     	<option value="">Seleccione una acción formativa</option>
                         <?php 
                             
                             $consultar = new ConsultaCliente();
-                            $id_c = $consultar->getIdCliente($_COOKIE['name_user']);
-                            $rst_acciones = $consultar->getAcciones($id_c);
+                            $rst_acciones = $consultar->getAcciones($id_cliente);
                             
                             foreach ($rst_acciones as $curso) {
-                                echo '<option value="' . $curso->id . '-' . $curso->denominacion . '">' . $curso->denominacion . '</option>';
+                                echo '<option value="' . $curso->id . '-' . $curso->denominacion . '">' . $curso->naccion . ' - ' . $curso->denominacion . '</option>';
                             }
+                            
+                            $consultar = null;
                                             
                         ?>
                     </select>
@@ -95,16 +102,16 @@ require_once '../../src/ConsultaCliente.class.php';
 			<div class="row">
 				<div class="col">
                     <label for="horario">Horario Mañana</label>
-                    <input type="text" class="form-control col-sm-9" id="hora_m_de" name="hora_m_de" placeholder="00:00" pattern="[0-9]{2}[:][0-9]{2}" maxlength="5" required>
+                    <input type="text" class="form-control col-sm-9" id="hora_m_de" name="hora_m_de" placeholder="00:00" pattern="[0-9]{2}[:][0-9]{2}" maxlength="5">
                     <label style="text-align: center; width: 150px;">a</label>
-					<input type="text" class="form-control col-sm-9" id="hora_m_a" name="hora_m_a" placeholder="00:00" pattern="[0-9]{2}[:][0-9]{2}" maxlength="5" required>
+					<input type="text" class="form-control col-sm-9" id="hora_m_a" name="hora_m_a" placeholder="00:00" pattern="[0-9]{2}[:][0-9]{2}" maxlength="5">
 				</div>
 
 				<div class="col">
                     <label for="horario">Horario Tarde</label>
-                    <input type="text" class="form-control col-sm-9" id="hora_t_de" name="hora_t_de" placeholder="00:00" pattern="[0-9]{2}[:][0-9]{2}" maxlength="5" required>
+                    <input type="text" class="form-control col-sm-9" id="hora_t_de" name="hora_t_de" placeholder="00:00" pattern="[0-9]{2}[:][0-9]{2}" maxlength="5">
 					<label style="text-align: center; width: 150px;">a</label>
-					<input type="text" class="form-control col-sm-9" id="hora_t_a" name="hora_t_a" placeholder="00:00" pattern="[0-9]{2}[:][0-9]{2}" maxlength="5" required>
+					<input type="text" class="form-control col-sm-9" id="hora_t_a" name="hora_t_a" placeholder="00:00" pattern="[0-9]{2}[:][0-9]{2}" maxlength="5">
 				</div>
 				
 				<div class="col">
@@ -148,18 +155,18 @@ require_once '../../src/ConsultaCliente.class.php';
 			<hr>
 			
 			<div class="mb-3">
-            	<label for="ntutor">Tutor / Docente</label>
+            	<label for="ntutor">Tutor / Formador</label>
                     <select class="custom-select d-block w-50" id="ntutor" name="ntutor" required>
-                        <option value="">Seleccione un Tutor/Docente</option>
+                        <option value="">Seleccione un Tutor/Formador</option>
     						<?php 
                                 
-                                $consultatutor = new ConsultaCliente();
+    						$consultatutor = new ConsultaCliente();
                                 $rst_tutores = $consultatutor->getTutores();
                                 
                                 foreach ($rst_tutores as $tutor) {
                                     echo '<option value="' . $tutor->id . '">' . $tutor->nombre . '</option>';
                                 }
-                                                
+                                
                             ?>
                     </select>
             </div>

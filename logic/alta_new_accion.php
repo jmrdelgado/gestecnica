@@ -7,7 +7,7 @@
      * @var ConsultaCliente $idcliente
      */
     $idcliente = new ConsultaCliente();
-    $id = $idcliente->getIdCliente($_COOKIE['name_user']);
+    //$id = $idcliente->getIdCliente($_COOKIE['name_user']);
     
     /**
      * Establecemos conexión con DBase
@@ -20,7 +20,7 @@
      * @var string $sql_insert
      */
     $sql_insert = "INSERT INTO acciones (naccion, denominacion, nhoras, modalidad, objetivos, contenidos, id_cliente)
-                    VALUES (:c_accion,:c_denominacion,:c_horas,:c_modalidad,:c_objetivos,:c_contenidos,$id)";
+                    VALUES (:c_accion,:c_denominacion,:c_horas,:c_modalidad,:c_objetivos,:c_contenidos,:c_idcliente)";
     
     
     $accion = htmlentities(addslashes($_POST['naccion']));
@@ -38,6 +38,7 @@
         $stmt->bindValue(':c_modalidad', $modalidad);
         $stmt->bindValue(':c_objetivos', $objetivos);
         $stmt->bindValue(':c_contenidos', $contenidos);
+        $stmt->bindValue(':c_idcliente', 1);
         $stmt->execute();   
     
         $numreg = $stmt->rowCount();

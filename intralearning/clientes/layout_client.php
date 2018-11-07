@@ -1,3 +1,12 @@
+<?php
+   session_start();
+   
+   $rol = $_SESSION['rol_user'];
+   
+   if ($rol != "cliente") {
+       header("location:http://okgroup.talention.es/login/acceso_usuarios.php");
+   }
+?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
 <head>
@@ -40,13 +49,6 @@
 
 </head>
 <body>
-	<?php
-	   session_start();
-	   
-	   if (!$_SESSION['rol_user'] == "cliente") {
-	       header("location:../index.php");
-	   }
-	 ?>
 	<div class="limiter">
 		<div class="container-login100" style="padding: 0px !important">
 			<div class="container">
@@ -61,19 +63,18 @@
 		        <!-- Acceso a Intralearning -->
 				<div class="layout_central">
 					<?php
-					   require ("../../src/ConsultaCliente.class.php");
+					   //require ("../../src/ConsultaCliente.class.php");
+					   //$consultar = new ConsultaCliente();
+					   //$id = $consultar->getIdCliente($lc);
 					   
-					   $consultar = new ConsultaCliente();
-					   $id = $consultar->getIdCliente($_COOKIE['name_user']);
-					   
-					   switch ($id) {
-					       case 1:
-					           require '/1/index.php';
-					           break;
-					       case 2:
-					           require '/2/index.php';
-					           break;
-					   }
+    					//   switch ($id) {
+    					//       case 1:
+    					           require '1/index.php';
+    					//           break;
+    					//       case 2:
+    					//           require '/2/index.php';
+    					//           break;
+    					//   }
 					   
                     ?>
 				</div>

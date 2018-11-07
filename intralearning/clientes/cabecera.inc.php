@@ -7,7 +7,7 @@
             <div id="cierre_sesion"><a href="../../login/acceso_usuarios.php">
             	<img alt="Inicio y Cierre de Sesión" title="Inicio y Cierre de Sesión" src="../../lib/images/icons/user_logeado.png" style="width: 45px;"></a>
             	<?php
-            	   echo "<span style='font-size:12px;'>Usuario logado: <strong>" . $_COOKIE['name_user'] . "</strong></span>";
+            	   echo "<span style='font-size:12px;'>Usuario logado: <strong>" . $_SESSION['rol_user'] . "</strong></span>";
             	?>
             </div>
         </div>

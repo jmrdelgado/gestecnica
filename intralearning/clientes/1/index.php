@@ -1,6 +1,8 @@
 <?php
 /* Comprobamos sesión de usuario existente */
-    if (!$_SESSION['rol_user'] == "cliente") {
+    $rol = $_SESSION['rol_user'];
+
+    if ($rol != "cliente") {
         header("location:../../index.php");
     } else {
         

@@ -2,11 +2,11 @@
 /**
  * Formulario Alta de acciones formativas
  */
-
-if (!$_SESSION['rol_user'] == "cliente") {
-    header("location:../index.php");
-}
-
+    $rol = $_SESSION['rol_user'];
+    
+    if ($rol != "cliente") {
+        header("location:../index.php");
+    }
 ?>
 
 <div class="content_form">
@@ -43,7 +43,7 @@ if (!$_SESSION['rol_user'] == "cliente") {
              	        echo "<a href='../clientes/layout_client.php?p=new_tutor'><button class='btn btn-success w-50' type='button' style='cursor:pointer; margin:0 auto;'>Aceptar</button></a>";
              	    } elseif ($_GET['tp'] == "gr") {
              	        
-             	        if ($msg == 23000) {
+             	        if ($msg == "gr_duplicado") {
              	            echo "Error en el proceso de alta.<br>";
              	            echo "Código de error: <strong>" . $msg . "</strong><br>";
              	            echo "El grupo indicado ya existe en el sistema.<br><br><br>";

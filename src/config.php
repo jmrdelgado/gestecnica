@@ -13,9 +13,9 @@
 /**
 * Configuración DBase remota
 **/
-	define("DBHOST_RM", "");
-	define("DBNAME_RM", "");
-	define("DBUSER_RM", "");
-	define("DBPASS_RM", "");
+	define("DBHOST_RM", "db759199813.hosting-data.io");
+	define("DBNAME_RM", "db759199813");
+	define("DBUSER_RM", "dbo759199813");
+	define("DBPASS_RM", "Ideo#2018#");
 	
 ?>

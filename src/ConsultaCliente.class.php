@@ -17,12 +17,12 @@ class ConsultaCliente extends ConexionDB {
     }
     
     /** Método para obtener el id_Cliente que se encuentra conectado **/
-    function getIdCliente($user) {
+    function getIdCliente($name_user) {
         
         $sql_id = "SELECT id_cliente FROM usuarios WHERE user = :c_user AND suspendido = 0";
         
         $stmt = $this->dbconecta->prepare("$sql_id");
-        $stmt->bindValue(":c_user", $user);
+        $stmt->bindValue(":c_user", $name_user);
         $stmt->execute();
         
         $numreg = $stmt->rowCount();
@@ -62,12 +62,13 @@ class ConsultaCliente extends ConexionDB {
         
     }
     
-    /** Método para consultar tutores existentes **/
-    function getTutores() {
+    /**Métodos encargado de devolver array con grupos comunicados por cliente**/    
+    function getGruposCliente($idcliente) {
+
+        $sql_grupos = "SELECT `acciones`.`naccion`, `grupos`.`ngrupo`, `grupos`.`denominacion`, `grupos`.`finicio`, `grupos`.`ffin`, `grupos`.`nalumnos`, `grupos`.`idaccion`,
+                        `grupos`.`estado`, `acciones`.`id_cliente` FROM `acciones` LEFT JOIN `grupos` ON `acciones`.`id` = `grupos`.`idaccion` AND `acciones`.`id_cliente` = '1' ORDER BY `acciones`.`naccion` ASC ";
         
-        $sql_tutores = "SELECT * FROM tutores ORDER BY nombre";
-        
-        $stmt = $this->dbconecta->prepare("$sql_tutores");
+        $stmt = $this->dbconecta->prepare($sql_grupos);
         $stmt->execute();
         
         $numreg = $stmt->rowCount();
@@ -83,13 +84,12 @@ class ConsultaCliente extends ConexionDB {
         
     }
     
-    /**Métodos encargado de devolver array con grupos comunicados por cliente**/    
-    function getGruposCliente($idcliente) {
+    /** Método para consultar tutores existentes **/
+    function getTutores() {
         
-        $sql_grupos = "SELECT acciones.`naccion`, grupos.`ngrupo`, grupos.`denominacion`, grupos.`finicio`, grupos.`ffin`, grupos.`nalumnos`, grupos.`estado`
-                        FROM acciones INNER JOIN grupos ON acciones.`naccion` = grupos.`idaccion` AND acciones.`id_cliente` = '" . $idcliente . "' ORDER BY ngrupo ASC";
+        $sql_tutores = "SELECT * FROM tutores ORDER BY nombre";
         
-        $stmt = $this->dbconecta->prepare($sql_grupos);
+        $stmt = $this->dbconecta->prepare("$sql_tutores");
         $stmt->execute();
         
         $numreg = $stmt->rowCount();

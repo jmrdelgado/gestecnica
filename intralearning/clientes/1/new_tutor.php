@@ -1,12 +1,12 @@
 <?php
 /**
  * Formulario Alta de acciones formativas
- */
-
-if (!$_SESSION['rol_user'] == "cliente") {
-    header("location:../index.php");
-}
-
+ */   
+    $rol = $_SESSION['rol_user'];
+    
+    if ($rol != "cliente") {
+        header("location:../index.php");
+    }
 ?>
 
 <div class="content_form">

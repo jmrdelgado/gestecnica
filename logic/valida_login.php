@@ -31,22 +31,16 @@
         /**
         * Obtenemos datos del usuario logado
         **/
-        $infouser = $stmt->fetch(PDO::FETCH_ASSOC);
-        $rol = $infouser['permisos'];
+        $infouser = $stmt->fetch(PDO::FETCH_OBJ);
+        $rol = $infouser->permisos;
         
         /**
          * Iniciamos control de la sesión de usuario
          **/
         session_start();
         $_SESSION['rol_user'] = $rol;
-        
-        /**
-         * Creamos cookie con nombre usuario
-         */
-        setcookie("name_user", $user, time()+86400, "/gestecnica");
 
         header("location:../login/acceso_usuarios.php");
-
 
     } else {
 
